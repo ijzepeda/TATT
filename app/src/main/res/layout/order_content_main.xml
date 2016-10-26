@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:layout_marginTop="?android:attr/actionBarSize"
+    >
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Loading orders"/>-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/orders_recyclerview"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <!-- <android.support.v7.widget.CardView
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_margin="20dp"
+         android:elevation="2dp"
+         app:cardBackgroundColor="#FFFFFF"
+         app:cardUseCompatPadding="false"
+         app:cardCornerRadius="5dp"
+         app:cardElevation="4dp"
+         app:contentPadding="20dp"
+         android:id="@+id/contentCard" >
+
+         <RelativeLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical"
+             android:elevation="0dp"
+             android:theme="@style/AppTheme">
+
+
+             <EditText
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:inputType="textCapSentences|textPersonName"
+                 android:ems="10"
+                 android:id="@+id/nombreOrden"
+                 android:layout_marginTop="-5dp"
+                 style="@style/AppTheme.EditText"
+                 android:hint="Nombre de la orden"
+                  />
+
+
+             <TextView
+                 android:text="Punto de Origen"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@+id/nombreOrden"
+                 android:layout_alignParentLeft="true"
+                 android:layout_alignParentStart="true"
+                 android:id="@+id/tpuntoOrigenTextView"
+                 android:layout_marginTop="10dp"
+
+                 android:theme="@style/AppTheme.Label"
+                 android:visibility="gone" />
+
+             <TextView
+                 android:text="Ver mapa"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="20dp"
+                 android:id="@+id/puntoEntregaTextView"
+
+                 android:layout_below="@+id/tpuntoOrigenTextView"
+                 android:layout_alignParentLeft="true"
+                 android:layout_alignParentStart="true"
+                 android:theme="@style/AppTheme.Label"/>
+
+             <TextView
+                 android:text="Tipo de Carga"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="20dp"
+                 android:id="@+id/tipoCargaTextView"
+
+                 android:layout_below="@+id/puntoEntregaTextView"
+                 android:layout_alignParentLeft="true"
+                 android:layout_alignParentStart="true"
+                 android:theme="@style/AppTheme.Label"/>
+
+
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_alignTop="@+id/tipoCargaTextView"
+                 android:layout_toEndOf="@+id/tiempoAproximadoTextView"
+                 android:id="@+id/tipoCargaResultTextView"
+                 android:layout_toRightOf="@+id/tiempoAproximadoTextView"
+                 android:theme="@style/AppTheme.Label"
+                 android:gravity="end"
+
+                 android:text="tipocarga default"
+                 />
+
+
+             <TextView
+                 android:text="Tiempo Aproximado"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="20dp"
+                 android:id="@+id/tiempoAproximadoTextView"
+
+                 android:layout_below="@+id/vehiculoTextView"
+                 android:layout_alignParentLeft="true"
+                 android:layout_alignParentStart="true"
+                 android:theme="@style/AppTheme.Label"/>
+
+             <TextView
+                 android:text="Distancia"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="20dp"
+                 android:id="@+id/distanciaTV"
+
+                 android:layout_below="@+id/tiempoAproximadoTextView"
+                 android:layout_alignParentLeft="true"
+                 android:layout_alignParentStart="true"
+                 android:theme="@style/AppTheme.Label"/>
+
+
+             <ImageButton
+                 android:src="@drawable/ic_pin_drop_white_24dp"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/puntoOrigenBtn"
+                 android:theme="@style/AppTheme.Button"
+                 android:gravity="center_horizontal|center_vertical"
+ style="@style/Widget.AppCompat.Button.Small"
+
+                 android:layout_below="@+id/nombreOrden"
+                 android:layout_alignLeft="@+id/viewMapBtn"
+                 android:layout_alignStart="@+id/viewMapBtn"
+                 android:layout_marginEnd="10dp"
+                 android:layout_marginRight="10dp"
+                 android:visibility="gone" />
+
+             <ImageButton
+                 android:src="@drawable/ic_pin_drop_white_24dp"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/viewMapBtn"
+                 android:theme="@style/AppTheme.Button"
+                 android:gravity="center_horizontal|center_vertical"
+                 style="@style/Widget.AppCompat.Button.Small"
+
+                 android:layout_marginEnd="14dp"
+                 android:layout_marginRight="14dp"
+                 android:layout_below="@+id/puntoOrigenBtn"
+                 android:layout_alignParentRight="true"
+                 android:layout_alignParentEnd="true" />
+
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/vehiculoResultTextView"
+                 android:theme="@style/AppTheme.Label"
+                 android:text="default"
+                 android:gravity="end"
+                 android:layout_above="@+id/tiempoAproximadoTextView"
+                 android:layout_alignParentRight="true"
+                 android:layout_alignParentEnd="true"
+                 android:layout_toEndOf="@+id/tarjetaRadioButton"
+                 android:layout_alignLeft="@+id/tipoCargaResultTextView"
+                 android:layout_alignStart="@+id/tipoCargaResultTextView"
+                 android:layout_toRightOf="@+id/tarjetaRadioButton" />
+
+             <TextView
+                 android:text="0.0 hrs."
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/etaResultTextView"
+
+                 android:theme="@style/AppTheme.Label.Light"
+                 android:layout_alignBaseline="@+id/tiempoAproximadoTextView"
+                 android:layout_alignBottom="@+id/tiempoAproximadoTextView"
+                 android:layout_alignParentRight="true"
+                 android:layout_alignParentEnd="true"
+                 android:maxEms="9"
+                 android:elegantTextHeight="false"
+                 android:ellipsize="marquee" />
+
+             <TextView
+                 android:text="Vehiculo"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="20dp"
+                 android:id="@+id/vehiculoTextView"
+
+                 android:theme="@style/AppTheme.Label"
+                 android:layout_below="@+id/flujoCargaTextView"
+                 android:layout_alignParentLeft="true"
+                 android:layout_alignParentStart="true" />
+
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/flujoCargaResulTextView"
+                 android:theme="@style/AppTheme.Label"
+                 android:text="default"
+                 android:gravity="end"
+                 android:layout_alignBottom="@+id/flujoCargaTextView"
+                 android:layout_toEndOf="@+id/puntoEntregaTextView"
+                 android:layout_alignLeft="@+id/tipoCargaResultTextView"
+                 android:layout_alignStart="@+id/tipoCargaResultTextView" />
+
+             <Button
+                 android:text="Cancelar Orden"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/cancelarBtn"
+                 android:theme="@style/AppTheme.Button"
+                 android:gravity="center"
+
+                 android:layout_weight="1"
+                 android:layout_alignParentBottom="true"
+                 android:layout_alignParentRight="true"
+                 android:layout_alignParentEnd="true" />
+
+             <TextView
+                 android:text="Flujo de Carga"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/flujoCargaTextView"
+
+                 android:theme="@style/AppTheme.Label"
+                 android:layout_marginTop="20dp"
+                 android:layout_below="@+id/tipoCargaResultTextView"
+                 android:layout_alignParentLeft="true"
+                 android:layout_alignParentStart="true" />
+
+
+             <TextView
+                 android:text="Costo"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/costoTV"
+
+                 android:theme="@style/AppTheme.Label"
+                 android:layout_below="@+id/distanciaTV"
+                 android:layout_alignParentLeft="true"
+                 android:layout_alignParentStart="true"
+                 android:layout_marginTop="17dp" />
+
+             <TextView
+                 android:text="0.0 Kms"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/distanciaTextView"
+
+                 android:theme="@style/AppTheme.Label.Light"
+                 android:layout_alignBaseline="@+id/distanciaTV"
+                 android:layout_alignBottom="@+id/distanciaTV"
+                 android:layout_alignParentRight="true"
+                 android:layout_alignParentEnd="true"
+                 android:ellipsize="middle"
+                 android:maxEms="10" />
+
+             <TextView
+                 android:text="$ 0.00"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/costoTextView"
+
+                 android:theme="@style/AppTheme.Label.Light"
+                 android:layout_alignBaseline="@+id/costoTV"
+                 android:layout_alignBottom="@+id/costoTV"
+                 android:layout_alignParentRight="true"
+                 android:layout_alignParentEnd="true"
+                 android:ellipsize="marquee"
+                 android:maxEms="15" />
+
+             <TextView
+                 android:text="Tipo de pago"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/pagoTextView"
+
+                 android:theme="@style/AppTheme.Label"
+                 android:layout_below="@+id/costoTV"
+                 android:layout_alignParentLeft="true"
+                 android:layout_alignParentStart="true"
+                 android:layout_marginTop="20dp" />
+
+             <TextView
+                 android:text="TIPO DE PAGO RESULT"
+
+                 android:theme="@style/AppTheme.Label.Light"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/tipoPagoResultTextView"
+                 android:layout_alignBaseline="@+id/pagoTextView"
+                 android:layout_alignBottom="@+id/pagoTextView"
+                 android:layout_alignParentRight="true"
+                 android:layout_alignParentEnd="true" />
+         </RelativeLayout>
+
+
+
+         </android.support.v7.widget.CardView>
+ -->
+    <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+    <!--tools:showIn="@layout/app_bar_main"-->
+    <!--tools:context="com.ijzepeda.tatt.MainActivity"-->
+
+
+</FrameLayout>
