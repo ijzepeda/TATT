@@ -94,17 +94,21 @@ holder.childID=order.getOrderNo();//"Nuevo childID";
 String childID;
     @Override
     public void onClick(View view) {
-        Log.e("~~onclick","view is:"+view.toString());
+        Log.e("~~onclick", "view is:" + view.toString());
         Context context = itemView.getContext();
-        Intent showOrderIntent = new Intent(context, ViewOrderActivity.class);
-        showOrderIntent.putExtra(ORDER_KEY, mOrderId.getText());
+        if (context instanceof OrdenesActivity) {
+            Intent showOrderIntent = new Intent(context, ViewOrderActivity.class);
+            showOrderIntent.putExtra(ORDER_KEY, mOrderId.getText());
 
-        showOrderIntent.putExtra("orderUID", childID);
-        //Log.d("User ref", childSnapshot.getRef().toString());//   D/User ref: https://tatt-5dc00.firebaseio.com/Ordenes/-KSZqD6W_kjmOPKwh3i8
-Log.e("~~onclick","Encviaria el child ID guardado"+childID);
-        context.startActivity(showOrderIntent);
+            showOrderIntent.putExtra("orderUID", childID);
+            //Log.d("User ref", childSnapshot.getRef().toString());//   D/User ref: https://tatt-5dc00.firebaseio.com/Ordenes/-KSZqD6W_kjmOPKwh3i8
+            Log.e("~~onclick", "Encviaria el child ID guardado" + childID);
+            context.startActivity(showOrderIntent);
+        } else if (context instanceof DriverOrdenesActivity)
+        {
+            itemView.setBackgroundColor(context.getResources().getColor(R.color.green));
+        }
     }
-
 //    public ViewHolder(View view) {
 //        super(view);
 //

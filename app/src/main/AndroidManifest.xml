@@ -105,6 +105,23 @@
             android:label="Ordenes"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".EmularAuto"></activity>
+
+
+
+        <activity
+            android:name=".RegisterDriver"
+            android:theme="@style/AppTheme"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="Registrar Socio - TATT"
+            />
+        <activity
+            android:name=".DriverOrdenesActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="Ordenes - TATT"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+
+
     </application>
 
 </manifest>

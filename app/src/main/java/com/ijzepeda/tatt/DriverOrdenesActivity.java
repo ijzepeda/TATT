@@ -51,12 +51,13 @@ public class DriverOrdenesActivity extends AppCompatActivity  implements Navigat
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_ordenes);
         //LOAD USER SESSION
-        loadUserSession();
-        if(usermail.equals("")){
+        ////loadUserSession();
+        /*if(usermail.equals("")){
             Toast.makeText(context, "Ocurrio un error", Toast.LENGTH_SHORT).show();
             super.onBackPressed();
             return;
         }
+*/
 
 //Toolbar, GUI , DRAWER
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -204,8 +205,8 @@ Log.e("~~ORdenes","ORden:"+((String)childSnapshot.child("originStreet").getValue
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        Menuoptions mo=new Menuoptions();
-        mo.menuAction(item,getApplicationContext());
+//        Menuoptions mo=new Menuoptions();
+//        mo.menuAction(item,getApplicationContext());
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

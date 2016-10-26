@@ -50,7 +50,7 @@ uid=Utils.getInstance().getValue(getApplication(),"uid");
         ((Button)findViewById(R.id.guardarBtn)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),NewOrderActivity.class);
+                Intent intent=new Intent(getApplicationContext(),DriverOrdenesActivity.class);
                 /*Utils.getInstance().save(getApplication(),"username",nameTV.getText().toString());
                 Utils.getInstance().save(getApplication(),"uid",uid);
 //                Utils.getInstance().save(getApplication(),"mail",mail);

@@ -15,5 +15,6 @@
     <color name="divider">#BDBDBD</color>
     <color name="background">#CCCCCC</color>
     <color name="teal">#008080</color>
+    <color name="green">#00A080</color>
 
 </resources>

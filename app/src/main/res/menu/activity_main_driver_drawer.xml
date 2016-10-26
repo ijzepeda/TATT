@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<!--inicio, nueva orden, ordenes, ajustes/configuracion, ayuda, acerca-->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_menu"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Inicio" />
+        <item
+            android:id="@+id/nav_new_order"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Nueva Orden" />
+        <item
+            android:id="@+id/nav_historial"
+            android:icon="@drawable/ic_directions_car_black_24dp"
+            android:title="Rastrear Ordenes" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Configuracion" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_promo"
+                android:icon="@drawable/ic_card_giftcard_black_24dp"
+                android:title="Promociones" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_help_black_24dp"
+                android:title="Ayuda" />
+            <item
+                android:id="@+id/nav_login"
+                android:icon="@drawable/ic_account_circle_black_24dp"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+</menu>

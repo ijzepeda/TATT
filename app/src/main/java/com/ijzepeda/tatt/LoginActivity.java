@@ -151,6 +151,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         //Todo load user session from sharedPrefs, if exists, it was logged in, then skip
         Button mEmailLogInButton = (Button) findViewById(R.id.email_sign_in_button);
         Button mEmailRegisterButton = (Button) findViewById(R.id.email_register_button);
+
         mEmailRegisterButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -169,6 +170,42 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
                 login(email,password);
 //                attemptLogin();
+            }
+        });
+
+
+//--------------------------
+        Button mEmailDriverLogInButton = (Button) findViewById(R.id.email_driver_sign_in_button);
+        Button mEmailDriverRegisterButton = (Button) findViewById(R.id.email_register_driver_button);
+
+        mEmailDriverRegisterButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                attemptRegister();
+
+                String email = mEmailView.getText().toString();
+                String password = mPasswordView.getText().toString();
+//                register(email,password);
+                Intent intent = new Intent(getApplicationContext(), RegisterDriver.class);
+                showProgress(false);
+
+                startActivity(intent);
+                finish();
+            }
+        });
+        mEmailDriverLogInButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String email = mEmailView.getText().toString();
+                String password = mPasswordView.getText().toString();
+
+//                login(email,password);
+//                attemptLogin();
+                Intent intent = new Intent(getApplicationContext(), DriverOrdenesActivity.class);
+                showProgress(false);
+
+                startActivity(intent);
+                finish();
             }
         });
 
